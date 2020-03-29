@@ -2,24 +2,24 @@
   <a class="navbar-brand" href="#">DatingApp</a>
 
  
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+    <ul  class="navbar-nav mr-auto">
+      <li *ngIf="loggedIn()" class="nav-item active">
         <a class="nav-link" href="#">Matches</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="loggedIn()" class="nav-item">
         <a class="nav-link" href="#">Listes</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="loggedIn()" class="nav-item">
         <a class="nav-link" href="#">Messages</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="loggedIn()" class="nav-item">
         <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
 
     <div *ngIf="loggedIn()" class="dropdown">
       <button class="btn dropdown-toggle text-light" >
-        Welcom User
+        Welcom {{authService.decodeToken?.unique_name | titlecase}}
       </button>
       <div class="dropdown-menu">
         <a class="dropdown-item" ><i class="fa fa-user"></i> Edit Profile</a>
