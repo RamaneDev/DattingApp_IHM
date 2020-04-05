@@ -14,8 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { MembersListComponent } from './members-list/members-list.component';
+import { MembersListComponent } from './members/members-list/members-list.component';
 import { appRoutes } from './routes';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { appRoutes } from './routes';
       ListsComponent,
       MessagesComponent,
       MembersListComponent,
-      MembersListComponent
+      MembersListComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,
