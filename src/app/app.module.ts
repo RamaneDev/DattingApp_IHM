@@ -23,6 +23,8 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { MembersDetailComponent } from './members/members-detail/members-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MembersEditComponent } from './members/members-edit/members-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 export function GetToken() {
    return localStorage.getItem('token');
@@ -37,6 +39,7 @@ export function GetToken() {
       ListsComponent,
       MessagesComponent,
       MembersListComponent,
+      MembersEditComponent,
       MembersListComponent,
       MemberCardComponent,
       MembersDetailComponent
@@ -60,6 +63,7 @@ export function GetToken() {
    ],
    providers: [
       ErrorIterceptorProvider,
+      MemberEditResolver,
       MemberDetailResolver,
       MemberListResolver
    ],
