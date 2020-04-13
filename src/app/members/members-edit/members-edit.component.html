@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="card-footer">  
-              <button [disabled]="!editForm.dirty" form="editform" class="btn btn-success btn-block">Save Changes</button>          
+              <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>          
           </div>
         </div>
   
@@ -40,8 +40,8 @@
       <div class="col-sm-8">
         <div class="tab-panel">
           <tabset class="member-tabset">
-            <tab heading="Edit Your Profil">
-                <form #editForm="ngForm" id="editform" (ngSubmit)="updateUser()">
+            <tab heading="Edit Profil">
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
                   <h4>Description</h4>
                   <textarea name="introduction" rows="6" class="form-control" 
                                          [(ngModel)]="user.introduction"></textarea>                 
@@ -62,9 +62,9 @@
                 
              
             </tab>
-            <tab heading="Edit Photos">
-              <h4>Edits Photos go here !</h4>               
-            </tab>
+             <tab heading="Edit Photos">
+                 <app-photo-editor [photos]="user.photos"></app-photo-editor>             
+             </tab>
           </tabset>
         </div>
       </div>
