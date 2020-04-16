@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/_services/auth.service';
 import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { EventEmitter } from '@angular/core';
+import { findIndex } from 'rxjs/operators';
 
 @Component({
   selector: 'app-photo-editor',
@@ -45,6 +46,16 @@ currentMain: Photo;
     }, error => {
       this.alert.error(error);
     });
+  }
+
+  deletePhoto(id: number) {
+    this.alert.confirm('do you want to delete the photo',
+             () => this.userService.deletePhoto(id, this.authService.decodeToken.nameid).subscribe(() => {
+      this.photos.splice(this.photos.findIndex(p => p.id === id), 1);
+      this.alert.success('The Photo is removed');
+      }, error => {
+        this.alert.error(error);
+      }));
   }
 
   initializeUploader() {
