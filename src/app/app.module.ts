@@ -11,6 +11,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 import { AppComponent } from './app.component';
@@ -60,6 +61,7 @@ export function GetToken() {
    ],
    imports: [
       BrowserModule,
+      PaginationModule.forRoot(),
       HttpClientModule,
       FileUploadModule,
       FormsModule,
