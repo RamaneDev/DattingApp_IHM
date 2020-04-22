@@ -7,11 +7,11 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import {TimeAgoPipe} from 'time-ago-pipe';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -70,6 +70,7 @@ export function GetToken() {
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
       BrowserAnimationsModule,
+      ButtonsModule.forRoot(),
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
