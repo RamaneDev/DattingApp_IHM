@@ -31,6 +31,7 @@ import { MembersEditComponent } from './members/members-edit/members-edit.compon
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { ListResolver } from './_resolvers/lists.resolver';
 
 // tslint:disable-next-line: use-pipe-transform-interface
 @Pipe({
@@ -87,7 +88,8 @@ export function GetToken() {
       MemberEditResolver,
       MemberDetailResolver,
       MemberListResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      ListResolver
    ],
    bootstrap: [
       AppComponent
