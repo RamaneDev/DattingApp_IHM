@@ -11,7 +11,7 @@ import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import {TimeAgoPipe} from 'time-ago-pipe';
-import { PaginationModule, ButtonsModule } from 'ngx-bootstrap';
+import { PaginationModule, ButtonsModule, ModalModule } from 'ngx-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +34,12 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { ListResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/hasRole.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { AdminService } from './_services/Admin.service';
+import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
 
 // tslint:disable-next-line: use-pipe-transform-interface
 @Pipe({
@@ -61,7 +67,12 @@ export function GetToken() {
       MembersDetailComponent,
       PhotoEditorComponent,
       TimeAgoExtendsPipe,
-      MemberMessagesComponent
+      MemberMessagesComponent,
+      AdminPanelComponent,
+      HasRoleDirective,
+      UserManagementComponent,
+      PhotoManagementComponent,
+      RolesModalComponent
    ],
    imports: [
       BrowserModule,
@@ -76,6 +87,7 @@ export function GetToken() {
       BrowserAnimationsModule,
       ButtonsModule.forRoot(),
       TabsModule.forRoot(),
+      ModalModule.forRoot(),
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
@@ -93,7 +105,11 @@ export function GetToken() {
       MemberListResolver,
       PreventUnsavedChanges,
       ListResolver,
-      MessagesResolver
+      MessagesResolver,
+      AdminService
+   ],
+   entryComponents : [
+      RolesModalComponent
    ],
    bootstrap: [
       AppComponent
